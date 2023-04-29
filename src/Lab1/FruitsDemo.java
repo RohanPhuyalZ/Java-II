@@ -20,6 +20,6 @@ public class FruitsDemo {
     }
 
     public static void main(String[] args) {
-        FruitsDemo f1 = new FruitsDemo();
+         new FruitsDemo();
     }
 }

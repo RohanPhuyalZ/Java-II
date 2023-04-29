@@ -2,8 +2,8 @@ package Lab1;
 
 import java.awt.*;
 
-public class TextAreaDemo {
-    TextAreaDemo(){
+public class TextFieldDemo {
+    TextFieldDemo(){
         Frame frame = new Frame("Hello World");
         frame.setSize(300,200);
         Label l1 = new Label("User ID");
@@ -17,6 +17,6 @@ public class TextAreaDemo {
     }
 
     public static void main(String[] args) {
-        TextAreaDemo t1 = new TextAreaDemo();
+         new TextFieldDemo();
     }
 }

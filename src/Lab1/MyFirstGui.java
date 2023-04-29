@@ -11,6 +11,6 @@ public class MyFirstGui {
         frame.setVisible(true);
     }
     public static void main(String[] args) {
-        MyFirstGui g1= new MyFirstGui();
+        new MyFirstGui();
     }
 }
