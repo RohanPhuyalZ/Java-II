@@ -14,6 +14,6 @@ public class HelloDemo {
     }
 
     public static void main(String[] args) {
-        HelloDemo h1 = new HelloDemo();
+        new HelloDemo();
     }
 }
