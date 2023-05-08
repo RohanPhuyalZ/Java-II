@@ -5,7 +5,8 @@ import java.awt.*;
 public class Question11 {
     Question11(){
         Frame frame = new Frame("Menu Demo");
-        frame.setSize(800,300);
+        frame.setSize(520,300);
+        frame.setLayout(new BorderLayout());
         MenuBar mb= new MenuBar();
         Menu file = new Menu("File");
         Menu edit = new Menu("Edit");
