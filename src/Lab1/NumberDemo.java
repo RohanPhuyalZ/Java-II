@@ -23,6 +23,6 @@ public class NumberDemo {
     }
 
     public static void main(String[] args) {
-        NumberDemo n1 = new NumberDemo();
+         new NumberDemo();
     }
 }
