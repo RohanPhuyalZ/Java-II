@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class Q10CardLayout {
     Q10CardLayout(){
-        Frame f = new Frame("Panel Layout");
+        Frame f = new Frame("Card Layout");
         Panel p1 = new Panel();
         Panel p2 = new Panel();
         Button b1 = new Button("Card1");
