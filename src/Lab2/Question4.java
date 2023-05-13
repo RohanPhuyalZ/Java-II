@@ -15,7 +15,7 @@ public class Question4 {
         c1.add("Python");
         c1.add("C++");
         c1.add("Dot Net");
-        Label l1 = new Label("Which Language you like most?"+c1.getItemCount());
+        Label l1 = new Label("Which Language you like most? Total Items:"+c1.getItemCount());
         Label l2 = new Label();
         l1.setSize(100,200);
         l2.setSize(100,200);
