@@ -25,11 +25,12 @@ public class Question5 {
                 String temp = s2;
                 s2=s1;
                 s1=temp;
-                t1.setText(s2);
-                t2.setText(s1);
+
+                t1.setText(s1);
+                t2.setText(s2);
             }
         });
-        frame.setSize(400,400);
+        frame.setSize(400,180);
         frame.setLayout(new GridLayout(3,2));
         frame.setVisible(true);
     }

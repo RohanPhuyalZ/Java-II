@@ -9,7 +9,7 @@ public class Question4 {
         Frame frame= new Frame();
         TextField t1= new TextField(10);
         Button b1 = new Button("Submit");
-        Label l1 = new Label("",Label.RIGHT);
+        Label l1 = new Label("              ",Label.RIGHT);
         l1.setSize(100,100);
         frame.add(t1);
         frame.add(b1);
