@@ -9,11 +9,16 @@ public class Question6 implements ActionListener {
     Label l1,l2,l3;
     TextField t1,t2,t3;
     Button b1,b2,b3,b4;
+    Panel panel,panel2;
     Question6(){
         frame = new Frame("Calculate");
-        frame.setLayout(new FlowLayout(FlowLayout.CENTER));
-        l1= new Label("NUmber 1");
-        l2= new Label("NUmber 2");
+        panel = new Panel();
+        panel2 = new Panel();
+        panel.setLayout(new GridLayout(3,2));
+        panel2.setLayout(new FlowLayout());
+        frame.setLayout(new GridLayout(2, 1));
+        l1= new Label("Number 1");
+        l2= new Label("Number 2");
         l3= new Label("Result");
         t1 = new TextField(10);
         t2 = new TextField(10);
@@ -29,16 +34,18 @@ public class Question6 implements ActionListener {
         b3.addActionListener(this);
         b4.addActionListener(this);
 
-        frame.add(l1);
-        frame.add(t1);
-        frame.add(l2);
-        frame.add(t2);
-        frame.add(l3);
-        frame.add(t3);
-        frame.add(b1);
-        frame.add(b2);
-        frame.add(b3);
-        frame.add(b4);
+        frame.add(panel);
+        frame.add(panel2);
+        panel.add(l1);
+        panel.add(t1);
+        panel.add(l2);
+        panel.add(t2);
+        panel.add(l3);
+        panel.add(t3);
+        panel2.add(b1);
+        panel2.add(b2);
+        panel2.add(b3);
+        panel2.add(b4);
         frame.setSize(400,200);
         frame.setVisible(true);
     }
