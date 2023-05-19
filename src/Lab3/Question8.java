@@ -49,24 +49,26 @@ public class Question8 implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getSource()==t1){
-            System.out.println("Dollar");
-//            double dollar = Double.parseDouble(t1.getText());
-//            t2.setText(""+(dollar*128.47));
-//            t3.setText(""+(dollar*1.37));
-        }else if(e.getSource()==t2){
-            System.out.println("Nepalese");
-        }else if(e.getSource()==t3){
-            System.out.println("Euro");
-        }
-//        double dollar = Double.parseDouble(t1.getText());
-//        double nrs = Double.parseDouble(t2.getText());
-//        double euro = Double.parseDouble(t3.getText());
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        if(e.getSource()==t1){
+            double dollar = Double.parseDouble(t1.getText());
+            t2.setText(""+(dollar*100));
+            t3.setText(""+(dollar*1.30));
+        }else if(e.getSource()==t2){
+            double nrs = Double.parseDouble(t2.getText());
+            t1.setText(""+(nrs/100));
+            t3.setText(""+(nrs/130));
+        }else if(e.getSource()==t3){
+            double euro = Double.parseDouble(t3.getText());
+            t1.setText(""+(euro/1.30));
+            t2.setText(""+(euro*130));
+        }
+//        double dollar = Double.parseDouble(t1.getText());
+//        double nrs = Double.parseDouble(t2.getText());
+//        double euro = Double.parseDouble(t3.getText());
 
     }
 }
