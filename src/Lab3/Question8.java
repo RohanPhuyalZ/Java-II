@@ -66,9 +66,5 @@ public class Question8 implements KeyListener {
             t1.setText(""+(euro/1.30));
             t2.setText(""+(euro*130));
         }
-//        double dollar = Double.parseDouble(t1.getText());
-//        double nrs = Double.parseDouble(t2.getText());
-//        double euro = Double.parseDouble(t3.getText());
-
     }
 }
