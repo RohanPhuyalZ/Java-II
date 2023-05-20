@@ -70,8 +70,8 @@ public class Question6 implements ActionListener {
             int secondNumber = Integer.parseInt(t2.getText());
             t3.setText(""+(firstNumber*secondNumber));
         }else if(e.getActionCommand()=="/"){
-            int firstNumber = Integer.parseInt(t1.getText());
-            int secondNumber = Integer.parseInt(t2.getText());
+            double firstNumber = Double.parseDouble(t1.getText());
+            double secondNumber = Double.parseDouble(t2.getText());
             t3.setText(""+(firstNumber/secondNumber));
         }
     }

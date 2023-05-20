@@ -38,7 +38,7 @@ public class Question3 implements ActionListener {
             frame.setBackground(Color.GREEN);
         }else if(e.getActionCommand()=="BLUE"){
             frame.setBackground(Color.BLUE);
-        }else if(e.getActionCommand()=="CLOSE"){
+        }else {
             System.exit(0);
         }
     }
