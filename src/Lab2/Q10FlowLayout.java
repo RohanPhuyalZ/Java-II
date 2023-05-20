@@ -7,7 +7,7 @@ public class Q10FlowLayout {
         Frame f = new Frame("Flow Layout");
         Label l1 = new Label("Testing Flow Layout Manager");
         Button b1 = new Button("Flow");
-        TextField t1 = new TextField();
+        TextField t1 = new TextField(15);
         f.setLayout(new FlowLayout());
         f.add(l1);
         f.add(b1);

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class Question12 {
     Question12(){
         Frame frame = new Frame();
-        frame.setSize(600,600);
+        frame.setSize(200,200);
         frame.setLayout(new FlowLayout());
         Dialog d1 = new Dialog(frame,"Test",true);
         FileDialog d2 = new FileDialog(d1,"Open Fie",FileDialog.LOAD);
