@@ -44,7 +44,7 @@ public class Question2 implements ActionListener {
             value--;
             t1.setText(""+value);
         }
-        else if(e.getActionCommand()=="Reset"){
+        else {
 
             t1.setText("");
         }
