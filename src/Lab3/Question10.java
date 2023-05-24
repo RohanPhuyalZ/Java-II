@@ -11,13 +11,7 @@ public class Question10 implements MouseListener {
     Question10(){
         frame= new Frame("MouseEvent");
         frame.setSize(400,400);
-        frame.setLayout(new FlowLayout(FlowLayout.CENTER,90,50));
-
-        b1= new Button("Welcome to MouseEvent Demo");
-        b1.setBackground(Color.magenta);
-        b1.setPreferredSize(new Dimension(200,40));
-        l1= new Label("MouseListener");
-        l2= new Label("                                        ");
+        l2= new Label();
 
         frame.add(l1);
         frame.add(b1);
