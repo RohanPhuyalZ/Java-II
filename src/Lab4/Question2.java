@@ -28,7 +28,14 @@ public class Question2 {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int num = Integer.parseInt(t1.getText());
-
+                int rev=0;
+                int rem=0;
+                while(num!=0){
+                    rem=num%10;
+                    rev=rev*10+rem;
+                    num/=10;
+                }
+                t2.setText(""+rev);
             }
         });
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
