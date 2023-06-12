@@ -1,9 +1,16 @@
 package Lab6;
+import javax.swing.*;
 import java.sql.*;
 
 public class ConnectDB {
     static Connection conn;
     static Statement stmt=null;
+    JFrame frame;
+    JPanel panel;
+    JLabel id,name,age,ph,add;
+    JTextField tid,tname,tage,tph,tadd;
+    JButton b1;
+    JOptionPane option;
 
     ConnectDB(){
         try{
@@ -42,6 +49,24 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
+    void insertIntoTable(){
+        String sql = "INSERT INTO User " +
+                "VALUES(1,'Rohan',20,9869457230,'Kavresthali')," +
+                "(2,'Lee',21,9813369920,'Tyai Cheu ma')";
+        try{
+            if(conn!=null){
+                stmt = conn.createStatement();
+                int result = stmt.executeUpdate(sql);
+                if(result!=-1){
+                    System.out.println("Data Insert Successfully");
+                }else{
+                    System.out.println("Could not insert data. Please check SQL Syntax");
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     void closeAll(){
         try {
             stmt.close();
@@ -50,9 +75,16 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
+    void insertDBGUI(){
+        frame = new JFrame();
+        frame.setSize(500,500);
+
+        frame.setVisible(true);
+    }
     public static void main(String[] args) {
         ConnectDB db1 = new ConnectDB();
-        db1.createTable();
+//        db1.createTable();
+        db1.insertIntoTable();
         db1.closeAll();
     }
 }
