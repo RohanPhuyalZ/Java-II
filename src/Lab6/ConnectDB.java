@@ -1,5 +1,6 @@
 package Lab6;
 import javax.swing.*;
+import java.awt.*;
 import java.sql.*;
 
 public class ConnectDB {
@@ -78,13 +79,22 @@ public class ConnectDB {
     void insertDBGUI(){
         frame = new JFrame();
         frame.setSize(500,500);
+        frame.setLayout(new GridLayout(2,1));
+        panel = new JPanel();
+        panel.setLayout(new GridLayout(5,1));
+
+        id= new JLabel("ID");
+        name = new JLabel("Name");
+        age = new JLabel("Age");
+        ph= new JLabel("PH");
 
         frame.setVisible(true);
     }
     public static void main(String[] args) {
         ConnectDB db1 = new ConnectDB();
 //        db1.createTable();
-        db1.insertIntoTable();
+//        db1.insertIntoTable();
+        db1.insertDBGUI();
         db1.closeAll();
     }
 }
