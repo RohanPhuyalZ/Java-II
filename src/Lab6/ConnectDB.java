@@ -1,6 +1,8 @@
 package Lab6;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class ConnectDB {
@@ -86,9 +88,64 @@ public class ConnectDB {
         id= new JLabel("ID");
         name = new JLabel("Name");
         age = new JLabel("Age");
-        ph= new JLabel("PH");
+        ph= new JLabel("Phone Number");
+        add= new JLabel("Address");
+        tid= new JTextField(8);
+        tname= new JTextField(8);
+        tage= new JTextField(8);
+        tph= new JTextField(8);
+        tadd= new JTextField(8);
+        b1 = new JButton("Add to DB");
 
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(tid.getText().isEmpty()||tname.getText().isEmpty()||tage.getText().isEmpty()||tph.getText().isEmpty()||tadd.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(frame, "Fill all fields");
+                }else{
+                    insertDataGUI();
+                }
+            }
+        });
+
+        panel.add(id);
+        panel.add(tid);
+        panel.add(name);
+        panel.add(tname);
+        panel.add(age);
+        panel.add(tage);
+        panel.add(ph);
+        panel.add(tph);
+        panel.add(add);
+        panel.add(tadd);
+        frame.add(panel);
+        frame.add(b1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+     void insertDataGUI(){
+         System.out.println(this.tid.getText());
+        int tid=Integer.parseInt(this.tid.getText());
+        String tname= this.tname.getText();
+        int tage = Integer.parseInt(this.tage.getText());
+        long tph = Long.parseLong(this.tph.getText());
+        String tadd= this.tadd.getText();
+        String sql = "INSERT INTO User " +
+                "VALUES("+tid+",'"+tname+"',"+tage+","+tph+",'"+tadd+"')";
+        try{
+            if(conn!=null){
+                stmt = conn.createStatement();
+                int result = stmt.executeUpdate(sql);
+                if(result!=-1){
+                    JOptionPane.showMessageDialog(frame, "Insert Success");
+                    System.out.println("Data Insert Successfully");
+                }else{
+                    JOptionPane.showMessageDialog(frame, "Cannot Insert");
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
     public static void main(String[] args) {
         ConnectDB db1 = new ConnectDB();
