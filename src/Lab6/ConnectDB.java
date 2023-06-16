@@ -14,7 +14,6 @@ public class ConnectDB {
     JLabel id,name,age,ph,add;
     JTextField tid,tname,tage,tph,tadd;
     JButton b1;
-    JOptionPane option;
 
     ConnectDB(){
         try{
@@ -155,7 +154,7 @@ public class ConnectDB {
                 stmt = conn.createStatement();
                 rs = stmt.executeQuery(sql);
                 while(rs.next()){
-                    System.out.println("id: "+rs.getInt(1)+"name: "+rs.getString(2)+"age: "+rs.getInt(3)+"phone_number: "+rs.getString(4)+"address: "+rs.getString(5));
+                    System.out.println("id: "+rs.getInt(1)+" name: "+rs.getString(2)+" age: "+rs.getInt(3)+" phone_number: "+rs.getString(4)+" address: "+rs.getString(5));
                 }
             }else{
                 System.out.println("Cannot fetch");
