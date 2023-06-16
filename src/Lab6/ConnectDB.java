@@ -8,6 +8,7 @@ import java.sql.*;
 public class ConnectDB {
     static Connection conn;
     static Statement stmt=null;
+    static ResultSet rs = null;
     JFrame frame;
     JPanel panel;
     JLabel id,name,age,ph,add;
@@ -147,11 +148,28 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
+    void fetchData(){
+        String sql = "SELECT * FROM User";
+        try{
+            if(conn!=null){
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(sql);
+                while(rs.next()){
+                    System.out.println("id: "+rs.getInt(1)+"name: "+rs.getString(2)+"age: "+rs.getInt(3)+"phone_number: "+rs.getString(4)+"address: "+rs.getString(5));
+                }
+            }else{
+                System.out.println("Cannot fetch");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         ConnectDB db1 = new ConnectDB();
 //        db1.createTable();
 //        db1.insertIntoTable();
-        db1.insertDBGUI();
+//        db1.insertDBGUI();
+        db1.fetchData();
         db1.closeAll();
     }
 }
